@@ -5,7 +5,6 @@ import com.hroutsourcuing.hroutsourcing.Repository.CandidatoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Base64;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,6 +22,7 @@ public class CandidatoService {
         return candidatoRepository.findByEmpresaIdAndUsuarioId(idEmpresa, idUsuario).stream()
                 .map(candidato -> new candidatoDTO(
                         candidato.getIdCandidato(),
+                        candidato.getId_postulacion().getIdPostulaciones(),
                         candidato.getNombre(),
                         candidato.getCorreo(),
                         candidato.getTelefono(),
@@ -36,6 +36,7 @@ public class CandidatoService {
     // Método para convertir de `modelCandidato` a `candidatoDTO`
     private candidatoDTO convertToDTO(modelCandidato candidato) {
         return new candidatoDTO(
+                (Long) candidato.getId_Candidato(),
                 candidato.getId_postulacion().getIdPostulaciones(),
                 candidato.getNombre(),
                 candidato.getCorreo(),

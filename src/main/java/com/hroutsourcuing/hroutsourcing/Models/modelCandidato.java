@@ -39,4 +39,8 @@ public class modelCandidato {
 
         public void setIdRol(int idRol) {
         }
+
+    public Object getId_Candidato() {
+        return getId_Candidato();
+    }
 }

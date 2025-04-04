@@ -16,7 +16,8 @@ public class candidatoDTO {
     private String cv; // Archivo CV
     private String foto; // Asegúrate de que sea una cadena en base64
 
-    public candidatoDTO(Long id, String nombre, String correo, int telefono, byte[] cv, byte[] foto) {
+    public candidatoDTO(Long idC,Long id, String nombre, String correo, int telefono, byte[] cv, byte[] foto) {
+        this.idCandidato = idC;
         this.idPostulacion = id;
         this.nombre = nombre;
         this.correo = correo;
